@@ -89,7 +89,6 @@ export default function Page() {
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    setShouldAutoScroll(true);
   };
 
   const handleScroll = () => {
