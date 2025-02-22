@@ -27,16 +27,16 @@ Generate a detailed treatment plan for the following patient. Your answer must f
 Output Structure:
 
 Patient Overview: Brief summary of the patient's condition.
-Step 1: Lifestyle Modifications (First-Line Treatment, consider lifestyle modifications before medications)
-Dietary Changes: Provide a structured diet plan using Zambia foods, including specific foods to include and avoid (e.g., DASH Diet specifics).
-Physical Activity: Recommended exercises with intensity and frequency.
+Lifestyle Modifications (First-Line Treatment, consider lifestyle modifications before medications)
+Dietary Changes: Provide a detailed and structured diet plan using Zambian foods, including specific foods to include and avoid (e.g., DASH Diet specifics).
+Physical Activity: Recommended detailed exercises with intensity and frequency.
 Weight Management Strategy: Target weight, expected reduction per week, and approach.
 Alcohol and Smoking: Limits and alternatives for patients struggling to quit.
-Step 2: Pharmacological Intervention (If Lifestyle Fails to Achieve Target BP)
+Pharmacological Intervention (If Lifestyle Fails to Achieve Target BP)
 Medication Options: Explain the first-line medications and alternatives based on patient profile (e.g., African ethnicity considerations).
-Step 3: Monitoring & Follow-Up Plan
+Monitoring & Follow-Up Plan
 BP Check Intervals: Frequency of follow-ups.
-Tests Required: Blood tests, kidney function monitoring, ECG for cardiac assessment.
+Tests Required: What are the tests required according to guidelines.
 Special Considerations: Address ethnic, family history, and potential risks for progression to diabetes.
 
 Here is the patient info where you need to generate treatment plan:
@@ -51,18 +51,6 @@ source identifier in the format [source=X&link=Y], where X is the source number 
 <chunks>
 ${JSON.stringify(context)}
 </chunks>
-
-Your task is to answer the question using the information provided in these chunks. 
-When you use information from a specific chunk in your answer, you must cite it using a markdown link format. 
-The citation should appear at the end of the sentence where the information is used.
-
-If you cannot answer the question using the provided chunks, say "Sorry I don't know".
-
-The citation format should be as follows:
-[Chunk source](URL)
-
-For example, if you're using information from the chunk labeled [source=3&link=https://example.com/page], your citation would look like this:
-[3](https://example.com/page) and would open a new tab to the source URL when clicked.
 `;
   }
 
