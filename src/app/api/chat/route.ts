@@ -22,9 +22,25 @@ export async function POST(req: Request) {
   // Override the last message to include the context and instructions
   if (messages.length > 0 && context) {
     messages[messages.length - 1].content = `
-You are tasked with generating a treatment plan using provided chunks of information, consider first steps first before using medications. Your goal is to provide an accurate answer while citing your sources using a specific markdown format.
+Generate a detailed treatment plan for the following patient. Your answer must follow a structured format and provide clear step-by-step recommendations before introducing medications.
 
-Here is the question you need to answer:
+Output Structure:
+
+Patient Overview: Brief summary of the patient's condition.
+Step 1: Lifestyle Modifications (First-Line Treatment, consider lifestyle modifications before medications)
+Dietary Changes: Provide a structured diet plan using Zambia foods, including specific foods to include and avoid (e.g., DASH Diet specifics).
+Physical Activity: Recommended exercises with intensity and frequency.
+Weight Management Strategy: Target weight, expected reduction per week, and approach.
+Alcohol and Smoking: Limits and alternatives for patients struggling to quit.
+Step 2: Pharmacological Intervention (If Lifestyle Fails to Achieve Target BP)
+Medication Options: Explain the first-line medications and alternatives based on patient profile (e.g., African ethnicity considerations).
+Step 3: Monitoring & Follow-Up Plan
+BP Check Intervals: Frequency of follow-ups.
+Tests Required: Blood tests, kidney function monitoring, ECG for cardiac assessment.
+Special Considerations: Address ethnic, family history, and potential risks for progression to diabetes.
+
+Here is the patient info where you need to generate treatment plan:
+
 <question>
 ${messages[messages.length - 1].content}
 </question>
